@@ -11,23 +11,23 @@ protected void onCreate(Bundlr savedInstanceState){
 super.onCreate(savedInstanceState);
 setContentView(R.layout.activity_login);
 
-loading = findViewById(R.id.loading);
+loading = findViewById(R.id.load);
 email = findViewById(R.id.email);
-password = findViewById(R.id.password);
-btn_login = findViewById(R.id.btn_login);
-link_regist = findViewById(R.id.link_regist);
+password = findViewById(R.id.pass);
+btn_login = findViewById(R.id.btn_log);
+link_regist = findViewById(R.id.link_reg);
 
 btn_login.setOnClickListener(){
 @Override
 public void onClic(View v) {
 String mEmail = email.getText().toString().trim();
-String mPassword = password.getText().toString().trim();
+String mPassword = pass.getText().toString().trim();
 
 if (!mEmail.isEmpety()|| !mPass.isEempety()){
 Login(mEmail, mPass);
 }else{
-email.setError("Please insert email");
-password.setError("Please insert password");
+email.setError("Please check your email");
+password.setError("Please correction your password");
 }
 }
 });
@@ -35,7 +35,7 @@ password.setError("Please insert password");
 private void Login(String email, String password){
 
 loading.setVisibility(View,VISIBLE);
-btn_login.setVisibility(View.GONE);
+btn_log.setVisibility(View.GONE);
 
 StringRequest string Request = new StringRequest(Request.Method.POST,URL_LOGIN,
 new Response.Listener<String>(){
